@@ -1,0 +1,27 @@
+# OpenStack clouds.yaml — copy to ~/.config/openstack/clouds.yaml
+# or place in the project root as clouds.yaml (gitignored).
+#
+# openstacksdk resolves auth in this order:
+#   1. clouds.yaml (preferred — supports multiple clouds)
+#   2. OS_* environment variables
+#
+# Reference: https://docs.openstack.org/openstacksdk/latest/user/guides/connect.html
+
+clouds:
+  devstack:
+    auth:
+      auth_url: http://your-openstack-host:5000/v3
+      username: admin
+      password: your-password
+      project_name: admin
+      user_domain_name: Default
+      project_domain_name: Default
+    region_name: RegionOne
+    interface: public
+    identity_api_version: 3
+
+  # Example: staging cloud
+  # staging:
+  #   auth:
+  #     auth_url: http://staging-openstack:5000/v3
+  #     ...
